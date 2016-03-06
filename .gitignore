@@ -13,3 +13,4 @@ Berksfile.lock
 /.rspec
 .vagrant
 .*env
+/.idea
