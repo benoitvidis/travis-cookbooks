@@ -142,6 +142,7 @@ gimme_versions.each do |version|
   end
 
   if version >= '1.5'
+  unless version < '1.5' && version == '1.6beta1'
     bash "install gometalinter tools for #{version}" do
       code %{eval "$(gimme #{version})" && gometalinter --install --update}
       flags '-l'
