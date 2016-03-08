@@ -39,7 +39,13 @@ include_recipe 'postgresql::ci_server'
 service 'postgresql' do
   if node['postgresql']['enabled']
     action [:enable, :restart]
+    retries: 5
+    retry_delay: 5
+    ignore_failure: true
   else
     action [:disable, :restart]
+    retries: 5
+    retry_delay: 5
+    ignore_failure: true
   end
 end
