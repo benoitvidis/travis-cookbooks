@@ -37,9 +37,9 @@ include_recipe 'postgresql::ci_server'
 # Switch on/off service autostart on boot, and restart now!
 #
 service 'postgresql' do
-  retries: 5
-  retry_delay: 5
-  ignore_failure: true
+  retries 5
+  retry_delay 5
+  ignore_failure true
 
   if node['postgresql']['enabled']
     action [:enable, :restart]
